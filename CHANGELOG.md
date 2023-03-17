@@ -1,3 +1,10 @@
+# v0.5.1
+
+### Changed
+
+* Renamed the base import file back to lib/jsonapi/rails.rb in order for bundler to correctly require the gem.
+
+
 # v0.5.0
 
 ### Changed
