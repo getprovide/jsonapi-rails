@@ -1,5 +1,5 @@
 module JSONAPI
-  module Rails
+  module RailsIntegration
     # @private
     module Logging
       def logger

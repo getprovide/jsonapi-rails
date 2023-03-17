@@ -1,7 +1,7 @@
 require 'jsonapi/serializable/renderer'
 
 module JSONAPI
-  module Rails
+  module RailsIntegration
     # @private
     class SuccessRenderer
       def initialize(renderer = JSONAPI::Serializable::Renderer.new)

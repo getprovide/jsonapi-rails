@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe JSONAPI::Rails::Railtie do
+describe JSONAPI::RailsIntegration::Railtie do
   it 'registers the JSON API MIME type' do
     expect(Mime[:jsonapi]).to eq('application/vnd.api+json')
   end
@@ -11,7 +11,7 @@ describe JSONAPI::Rails::Railtie do
 
   it 'registers the FilterMediaType middleware' do
     expect(
-      Rails.application.middleware.include?(JSONAPI::Rails::FilterMediaType)
+      Rails.application.middleware.include?(JSONAPI::RailsIntegration::FilterMediaType)
     ).to be true
   end
 end

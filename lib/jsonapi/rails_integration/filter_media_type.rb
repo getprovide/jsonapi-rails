@@ -1,7 +1,7 @@
 require 'rack/media_type'
 
 module JSONAPI
-  module Rails
+  module RailsIntegration
     class FilterMediaType
       JSONAPI_MEDIA_TYPE = 'application/vnd.api+json'.freeze
 

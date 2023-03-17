@@ -1,7 +1,7 @@
 require 'jsonapi/deserializable/resource'
 
 module JSONAPI
-  module Rails
+  module RailsIntegration
     # Customized deserializable resource class to match ActiveRecord's API.
     class DeserializableResource < JSONAPI::Deserializable::Resource
       id

@@ -1,8 +1,8 @@
 require 'jsonapi/parser'
-require 'jsonapi/rails/deserializable_resource'
+require 'jsonapi/rails_integration/deserializable_resource'
 
 module JSONAPI
-  module Rails
+  module RailsIntegration
     module Controller
       # Controller class and instance methods for deserialization of incoming
       #   JSON API payloads.
@@ -46,13 +46,13 @@ module JSONAPI
           def deserializable_resource(key, options = {}, &block)
             options = options.dup
             klass = options.delete(:class) ||
-                    Class.new(JSONAPI::Rails::DeserializableResource, &block)
+                    Class.new(JSONAPI::RailsIntegration::DeserializableResource, &block)
 
             before_action(options) do |controller|
               hash = controller.params.to_unsafe_hash
                 .with_indifferent_access[:_jsonapi]
               if hash.nil?
-                JSONAPI::Rails.logger.warn do
+                JSONAPI::RailsIntegration.logger.warn do
                   "Unable to deserialize #{key} because no JSON API payload was" \
                   " found. (#{controller.controller_name}##{params[:action]})"
                 end

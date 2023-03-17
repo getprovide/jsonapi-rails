@@ -1,8 +1,8 @@
-require 'jsonapi/rails/serializable_active_model_errors'
-require 'jsonapi/rails/serializable_error_hash'
+require 'jsonapi/rails_integration/serializable_active_model_errors'
+require 'jsonapi/rails_integration/serializable_error_hash'
 
 module JSONAPI
-  module Rails
+  module RailsIntegration
     class Configuration < ActiveSupport::InheritableOptions; end
 
     # @private
@@ -15,8 +15,8 @@ module JSONAPI
 
       DEFAULT_JSONAPI_ERRORS_CLASS = DEFAULT_JSONAPI_CLASS.dup.merge!(
         'ActiveModel::Errors'.to_sym =>
-        JSONAPI::Rails::SerializableActiveModelErrors,
-        'Hash'.to_sym => JSONAPI::Rails::SerializableErrorHash
+        JSONAPI::RailsIntegration::SerializableActiveModelErrors,
+        'Hash'.to_sym => JSONAPI::RailsIntegration::SerializableErrorHash
       ).freeze
 
       DEFAULT_JSONAPI_OBJECT = {
@@ -60,7 +60,7 @@ module JSONAPI
       end
 
       def config
-        @config ||= JSONAPI::Rails::Configuration.new(DEFAULT_CONFIG)
+        @config ||= JSONAPI::RailsIntegration::Configuration.new(DEFAULT_CONFIG)
       end
     end
   end
