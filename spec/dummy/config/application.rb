@@ -3,7 +3,7 @@ require_relative 'boot'
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "jsonapi/rails_integration"
+require "jsonapi/rails"
 
 module Dummy
   class Application < Rails::Application
