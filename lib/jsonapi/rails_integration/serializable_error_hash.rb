@@ -1,5 +1,5 @@
 module JSONAPI
-  module Rails
+  module RailsIntegration
     # @private
     class SerializableErrorHash < JSONAPI::Serializable::Error
       def initialize(exposures)

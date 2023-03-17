@@ -1,5 +1,5 @@
 module JSONAPI
-  module Rails
+  module RailsIntegration
     # @private
     class LogSubscriber < ActiveSupport::LogSubscriber
       def render(event)
@@ -16,10 +16,10 @@ module JSONAPI
       end
 
       def logger
-        JSONAPI::Rails.logger
+        JSONAPI::RailsIntegration.logger
       end
     end
   end
 end
 
-JSONAPI::Rails::LogSubscriber.attach_to :'jsonapi-rails'
+JSONAPI::RailsIntegration::LogSubscriber.attach_to :'jsonapi-rails'

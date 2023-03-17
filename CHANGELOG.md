@@ -1,3 +1,11 @@
+# v0.5.0
+
+### Changed
+
+* Renamed base JSONAPI::Rails module to JSONAPI::RailsIntegration for compatibliity with the jsonapi-resources gem.
+
+# v0.4.0
+
 ### Added
 
 * Configurable logger and logsubscriber for instrumented events.

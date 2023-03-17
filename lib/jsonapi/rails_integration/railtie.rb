@@ -1,11 +1,11 @@
 require 'rails/railtie'
 
-require 'jsonapi/rails/filter_media_type'
-require 'jsonapi/rails/log_subscriber'
-require 'jsonapi/rails/renderer'
+require 'jsonapi/rails_integration/filter_media_type'
+require 'jsonapi/rails_integration/log_subscriber'
+require 'jsonapi/rails_integration/renderer'
 
 module JSONAPI
-  module Rails
+  module RailsIntegration
     # @private
     class Railtie < ::Rails::Railtie
       MEDIA_TYPE = 'application/vnd.api+json'.freeze
@@ -25,8 +25,8 @@ module JSONAPI
         register_parameter_parser
         register_renderers
         ActiveSupport.on_load(:action_controller) do
-          require 'jsonapi/rails/controller'
-          include ::JSONAPI::Rails::Controller
+          require 'jsonapi/rails_integration/controller'
+          include ::JSONAPI::RailsIntegration::Controller
         end
 
         app.middleware.use FilterMediaType

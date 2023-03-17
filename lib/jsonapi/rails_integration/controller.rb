@@ -1,8 +1,8 @@
-require 'jsonapi/rails/controller/deserialization'
-require 'jsonapi/rails/controller/hooks'
+require 'jsonapi/rails_integration/controller/deserialization'
+require 'jsonapi/rails_integration/controller/hooks'
 
 module JSONAPI
-  module Rails
+  module RailsIntegration
     # ActionController methods and hooks for JSON API deserialization and
     #   rendering.
     module Controller

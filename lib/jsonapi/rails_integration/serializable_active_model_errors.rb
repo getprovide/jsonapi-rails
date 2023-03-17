@@ -1,5 +1,5 @@
 module JSONAPI
-  module Rails
+  module RailsIntegration
     # @private
     class SerializableActiveModelError < Serializable::Error
       title do

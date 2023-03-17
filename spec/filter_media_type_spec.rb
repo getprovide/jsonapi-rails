@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe JSONAPI::Rails::FilterMediaType do
+describe JSONAPI::RailsIntegration::FilterMediaType do
   let(:app) { ->(_) { [200, {}, ['OK']] } }
 
   context 'when not receiving JSON API Content-Type' do
