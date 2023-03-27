@@ -1,9 +1,14 @@
+# v0.5.2
+
+### Changed
+
+* Changed the Railtie to copy the request body to a `_jsonapi` param, rather than moving it.
+
 # v0.5.1
 
 ### Changed
 
 * Renamed the base import file back to lib/jsonapi/rails.rb in order for bundler to correctly require the gem.
-
 
 # v0.5.0
 
