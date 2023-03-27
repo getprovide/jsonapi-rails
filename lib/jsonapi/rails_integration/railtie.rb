@@ -11,9 +11,9 @@ module JSONAPI
       MEDIA_TYPE = 'application/vnd.api+json'.freeze
       PARSER = lambda do |body|
         data = JSON.parse(body)
-        hash = { _jsonapi: data }
+        data[:_jsonapi] = data.slice(:data)
 
-        hash.with_indifferent_access
+        data.with_indifferent_access
       end
       RENDERERS = {
         jsonapi:        SuccessRenderer.new,
