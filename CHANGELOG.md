@@ -1,3 +1,10 @@
+# v0.5.3
+
+### Changed
+
+* Use a string key instead of a symbol key to copy the request body to a `_jsonapi` param.
+* Only test against Rails 7.0.0 and Ruby 3.x.
+
 # v0.5.2
 
 ### Changed
